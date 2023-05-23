@@ -1,2 +1,7 @@
-<h1>Memos#index</h1>
-<p>Find me in app/views/memos/index.html.erb</p>
+<h1>My Habit</h1>
+<%= link_to '記録を付ける', new_memo_path %>
+<%#カレンダーを表示%>
+<%= month_calendar do |date| %>
+  <%#カレンダー内を日にちのみで表示する%>
+  <%= date.day %>
+<% end %>
