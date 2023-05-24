@@ -1,7 +1,9 @@
 <h1>My Habit</h1>
 <p>日々の生活を記録しましょう</p>
 <%= notice %>
-<%= link_to '記録を付ける', new_memo_path %>
+<div class="link">
+  <%= link_to '記録を付ける', new_memo_path, class:"btn btn-info" %>
+</div>
 <%#カレンダーを表示%>
 <%= month_calendar events: @memos do |date, memos| %>
   <%#カレンダー内を日にちのみで表示する%>
