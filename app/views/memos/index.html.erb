@@ -2,7 +2,14 @@
 <p>日々の生活を記録しましょう</p>
 <%= link_to '記録を付ける', new_memo_path %>
 <%#カレンダーを表示%>
-<%= month_calendar do |date| %>
+<%= month_calendar events: @memos do |date, memos| %>
   <%#カレンダー内を日にちのみで表示する%>
   <%= date.day %>
+  <%#投稿した記録をeachで回して表示させる%>
+  <% memos.each do |memo| %>
+  <div>
+    <%#タイトルのみカレンダーに表示しリンク先に投稿詳細%>
+    <%= link_to memo.title, memo_path(memo.id) %>
+  </div>
+  <% end %>
 <% end %>
