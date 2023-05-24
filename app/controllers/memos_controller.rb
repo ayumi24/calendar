@@ -24,7 +24,7 @@ class MemosController < ApplicationController
   def update
     memo = Memo.find(params[:id])
     memo.update(memo_params)
-    redirect_to memo_path(memo.id), notice:"記録を編集しました"
+    redirect_to memo_path(memo.id), notice:"記録を編集しました！"
   end
 
   private
