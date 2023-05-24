@@ -27,6 +27,12 @@ class MemosController < ApplicationController
     redirect_to memo_path(memo.id), notice:"記録を編集しました！"
   end
 
+  def destroy
+    memo = Memo.find(params[:id])
+    memo.destroy
+    redirect_to root_path, notice:"記録を削除しました"
+  end
+
   private
 
   def memo_params
