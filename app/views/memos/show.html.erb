@@ -1,2 +1,10 @@
-<h1>Memos#show</h1>
-<p>Find me in app/views/memos/show.html.erb</p>
+<h1>詳細</h1>
+<p>自身の記録を振り返りましょう</p>
+<%= link_to "カレンダーに戻る", root_path %>
+<h4>記録時間</h4>
+<%= @memo.start_time.strftime("%Y-%m-%d %H:%M") %>
+<h4>タイトル</h4>
+  <%= @memo.title %>
+<h4>記録内容</h4>
+  <%= @memo.content %>
+<%= link_to "編集", edit_memo_path(@memo.id) %>
