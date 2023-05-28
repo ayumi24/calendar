@@ -1,4 +1,4 @@
-<h1>詳細</h1>
+<h1>detail</h1>
 <p>自身の記録を振り返りましょう</p>
 <div class="container">
  <%= notice %><br>
@@ -9,12 +9,11 @@
   <%= @memo.title %>
  <p>記録内容</p>
   <%= @memo.content %><br>
- <p>画像</p>
   <% if @memo.image.attached? %>
     <%= image_tag @memo.image, size: "200x200" %>
   <% else %>
     <%= image_tag 'no_image', size: "200x200" %>
-  <% end %>
+  <% end %><br>
  <%= link_to "編集", edit_memo_path(@memo.id), class: "btn btn-success" %>
  <%= link_to "削除", memo_path(@memo.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 </div>

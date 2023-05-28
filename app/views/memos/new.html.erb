@@ -1,4 +1,4 @@
-<h1>記録</h1>
+<h1>Log</h1>
 <p>記録を習慣化していきましょう！</p>
 <div class="container">
   <% if @memo.errors.any? %>
@@ -20,7 +20,7 @@
     <%= f.text_field :content, size: "80x10" %>
   </div>
   <div class="image">
-    <%= f.label :image %>
+    <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
 
