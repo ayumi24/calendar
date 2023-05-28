@@ -22,11 +22,19 @@
     box-sizing: border-box;
  }
 
- h1, p, .container, .link{
+ li{
+  list-style: none;
+ }
+
+ .link{
+  text-align: center;
+ }
+
+ h1, p, .container{
     text-align: center;
     padding-top: 15px;
  }
 
- h4{
-     font-size: 30px;
+ .title, .submit{
+  padding-top: 15px;
  }

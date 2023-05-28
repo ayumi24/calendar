@@ -12,9 +12,12 @@ class MemosController < ApplicationController
   end
 
   def create
-    memo = Memo.new(memo_params)
-    memo.save
-    redirect_to root_path, notice:"記録しました！"
+    @memo = Memo.new(memo_params)
+    if @memo.save
+      redirect_to root_path, notice:"記録しました！"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -36,7 +39,7 @@ class MemosController < ApplicationController
   private
 
   def memo_params
-    params.require(:memo).permit(:title, :content, :start_time)
+    params.require(:memo).permit(:title, :content, :start_time, :image)
   end
 
 end

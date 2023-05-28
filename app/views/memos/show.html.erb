@@ -1,16 +1,20 @@
 <h1>詳細</h1>
 <p>自身の記録を振り返りましょう</p>
-<p><%= notice %></p>
-<div class="link">
-  <%= link_to "カレンダーに戻る", root_path %>
-</div>
 <div class="container">
-  <h4>記録時間</h4>
+ <%= notice %><br>
+ <%= link_to "カレンダーに戻る", root_path, class: "btn btn-info" %>
+ <p>記録時間</p>
   <%= @memo.start_time.strftime("%Y-%m-%d %H:%M") %>
-  <h4>タイトル</h4>
-    <%= @memo.title %>
-  <h4>記録内容</h4>
-    <%= @memo.content %><br>
-  <%= link_to "編集", edit_memo_path(@memo.id), class: "btn btn-sm btn-success" %>
-  <%= link_to "削除", memo_path(@memo.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %>
+ <p>タイトル</p>
+  <%= @memo.title %>
+ <p>記録内容</p>
+  <%= @memo.content %><br>
+ <p>画像</p>
+  <% if @memo.image.attached? %>
+    <%= image_tag @memo.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
+ <%= link_to "編集", edit_memo_path(@memo.id), class: "btn btn-success" %>
+ <%= link_to "削除", memo_path(@memo.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 </div>
